@@ -1,0 +1,83 @@
+#formAbout{
+    width: 800px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+#formAboutCerrar{
+    margin-left: 90%;
+}
+#contAbout{
+    width: 90%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+}
+    #contAboutLeft{
+        width: 40%;
+        height: 100%;
+        font-size: 18px;
+        text-align: left;
+    }
+    #contAboutRight{
+        width: 60%;
+        height: 100%; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+        .contAboutRightPlan{
+            width: 46%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+        .contAboutRightPlanTitle{
+            width: 100%;
+            height: 20%;
+            background-color: #DEDDDAFF;
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-style: italic;
+        }
+        #contAboutRightPrimeTitle{
+            background-color: #FF7800FF;
+        }
+        .contAboutRightPlanBody{
+            width: 100%;
+            height: 60%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            text-align: left;
+        }
+        .contAboutRightPlanBody a{
+            margin-left: 5px;
+            margin-top: 5px;
+        }
+        .contAboutRightPlanPrice{
+            width: 100%;
+            height: 20%;
+            background-color: #DEDDDAFF;  
+            display: flex;
+            justify-content: center;
+            align-items: center;  
+            font-style: italic; 
+            font-size: 12px;       
+        }
+

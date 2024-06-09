@@ -1,0 +1,79 @@
+
+dialog[open] {
+    position: fixed; 
+    background-color: #E9E9E9;
+    margin: auto; /* Centrada */
+    padding: 10px;
+    border-radius: none;
+    border: 1px solid lightgrey;
+  }
+  dialog::backdrop{
+    background-color: rgba(0, 0, 0, .70);
+  }
+  .formCerrar{
+      width: 20px;
+      margin-left: 85%;
+      cursor: pointer;
+      margin-top: 20px;
+  }
+  .formNot{
+  
+  }
+  .formTitle{
+      font-size: 40px;
+      font-style: italic;
+  }
+  .inputF{
+      width: 85%;
+      height: 40px;
+      margin-top: 40px;
+      background-color: #DEDDDAFF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .inputF input[type=text]{
+      width: 90%;
+      height: 100%;
+      margin-left: 10px;
+      background-color: transparent;
+      border: none;
+      font-size: 20px;
+  }
+  .inputF input[type=text]:focus{
+      width: 90%;
+      height: 100%;
+      margin-left: 10px;
+      background-color: transparent;
+      border: none;
+      outline: none; 
+  }
+  .inputF input[type=password]{
+      width: 90%;
+      height: 100%;
+      margin-left: 10px;
+      background-color: transparent;
+      border: none;
+      font-size: 20px;
+  }
+  .inputF input[type=password]:focus{
+      width: 90%;
+      height: 100%;
+      margin-left: 10px;
+      background-color: transparent;
+      border: none;
+      outline: none; 
+  }
+  .inputF img{
+      width: 10%;
+      height: auto;
+  }
+  
+  .formBoton{
+      width: 85%; 
+      margin-top: 40px;
+  }
+  .formNot{
+      width: 100%;
+      height: 20px;
+  }
