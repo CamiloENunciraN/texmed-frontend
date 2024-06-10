@@ -42,8 +42,8 @@ main{
     height: auto;
 }
 .buttonMain {
-    background-color: var(--PrimaryButtonColor);
-    color: var(--PrimaryFontColor);
+    background-color: darkorange;
+    color: white;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
@@ -53,5 +53,5 @@ main{
 }
 
 .buttonMain:hover {
-    background-color: var(--SecondButtonColor);
+    background-color: rgb(255, 98, 0);
 }

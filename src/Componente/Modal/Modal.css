@@ -20,13 +20,13 @@ dialog[open] {
   
   }
   .formTitle{
-      font-size: 40px;
+      font-size: 30px;
       font-style: italic;
   }
   .inputF{
       width: 85%;
       height: 40px;
-      margin-top: 40px;
+      margin-top: 20px;
       background-color: #DEDDDAFF;
       display: flex;
       justify-content: center;
@@ -68,7 +68,6 @@ dialog[open] {
       width: 10%;
       height: auto;
   }
-  
   .formBoton{
       width: 85%; 
       margin-top: 40px;
