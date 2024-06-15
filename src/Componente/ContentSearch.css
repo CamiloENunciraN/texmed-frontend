@@ -1,0 +1,89 @@
+.contenData{
+    width: 90%;
+    height: auto;
+    background-color: #DEDDDAFF;
+    opacity: 0.95;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1%;
+}
+    #contenSearch{
+        width: 95%;
+        height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 3%;
+    }
+        .contenSearch_titulo{
+            width: 100%;
+            height: 30px;
+            background-color:white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-style: italic;
+            font-weight: bold;
+        }
+        .contenSearch_titulo div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-style: italic;
+        }
+        .contenSearch_linea{
+            width: 100%;
+            height: 30px;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-style: italic;
+            cursor: pointer;
+            margin-top: 1%;
+            transition: background-color 0.3s ease;
+        }
+        .contenSearch_linea:hover{
+            background-color: #fbaf86f4;
+        }
+            .contenSearch_icon{
+                width: 3%;
+                height: 100%;
+                margin: 1px solid #DEDDDAFF;
+                margin-right: transparent;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .contenSearch_icon img{
+                width: 30px;
+                height: auto;
+            }
+            .contenSearch_nombre{
+                width: 47%;
+                height: 100%;
+                margin: 1px solid #DEDDDAFF;
+                margin-right: transparent; 
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+            }
+            .contenSearch_prenda{
+                width: 25%;
+                height: 100%;
+                margin: 1px solid #DEDDDAFF;
+                margin-right: transparent; 
+                display: flex;
+                justify-content: center;
+                align-items: center; 
+            }
+            .contenSearch_fecha{
+                width: 25%;
+                height: 100%;
+                margin: 1px solid #DEDDDAFF;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }

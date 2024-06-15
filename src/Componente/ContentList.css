@@ -1,0 +1,93 @@
+.contenData{
+    width: 90%;
+    height: auto;
+    background-color: #DEDDDAFF;
+    opacity: 0.95;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1%;
+}
+    #contenList{
+        width: 95%;
+        height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 3%;
+    }
+        .contenList_titulo{
+            width: 100%;
+            height: 30px;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-style: italic;
+            font-weight: bold;
+        }
+        .contenList_titulo div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-style: italic;
+        }
+        .contenList_linea{
+            width: 100%;
+            height: 30px;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-style: italic;
+            margin-top: 1%;
+        }
+            .contenList_icon{
+                width: 3%;
+                height: 100%;
+                margin: 1px solid #DEDDDAFF;
+                margin-right: transparent;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .contenList_icon img{
+                width: 30px;
+                height: auto;
+            }
+            .contenList_nombre{
+                width: 31%;
+                height: 100%;
+                margin: 1px solid #DEDDDAFF;
+                margin-right: transparent; 
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+            }
+            .contenList_telefono{
+                width: 22%;
+                height: 100%;
+                margin: 1px solid #DEDDDAFF;
+                margin-right: transparent; 
+                display: flex;
+                justify-content: center;
+                align-items: center; 
+            }
+            .contenList_correo{
+                width: 22%;
+                height: 100%;
+                margin: 1px solid #DEDDDAFF;
+                margin-right: transparent; 
+                display: flex;
+                justify-content: center;
+                align-items: center; 
+            }
+            .contenList_direccion{
+                width: 22%;
+                height: 100%;
+                margin: 1px solid #DEDDDAFF;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }

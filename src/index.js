@@ -5,15 +5,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import DashBoard from './Pagina/DashBoard';
 import Opcion from './Pagina/Opcion';
+import ClientList from './Pagina/ClientList';
+import ClientSearch from './Pagina/ClientSearch';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Opcion></Opcion>
+    <ClientSearch></ClientSearch>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
