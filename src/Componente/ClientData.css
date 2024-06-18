@@ -1,0 +1,41 @@
+.dataCliente{
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inputForm{
+    width: 30%;
+    height: 40px;
+    background-color: #FFFFFF;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid darkgray;
+}
+.inputForm input{
+    width: 90%;
+    height: 100%;
+    margin-left: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+}
+.inputForm input:focus{
+    width: 90%;
+    height: 100%;
+    margin-left: 10px;
+    background-color: transparent;
+    border: none;
+    outline: none; 
+}
+.inputForm input::placeholder{
+    font-style: italic;
+    font-size: 16px;
+}
+.inputForm img{
+    width: 10%;
+    height: 90%;
+}

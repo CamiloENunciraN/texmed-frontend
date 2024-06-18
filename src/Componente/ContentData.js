@@ -10,27 +10,19 @@ function ContentData() {
                         <h1>Datos Personales</h1>
                         <div>
                             <p>Nombre:*</p>
-                            <input id="nombreU" className='inputFormOpciones' type="text" placeholder="Lucia" title="Escriba su nombre" maxlength="50" required />
+                            <input id="nombreU" className='inputFormOpciones' type="text" placeholder="Lucia" title="Escriba su nombre" maxLength={100} required />
                         </div>
                         <div>
                             <p>Correo:*</p>
-                            <input id="correoU" className='inputFormOpciones' type="email" placeholder="Correo@correo.com" title="Escriba su correo" maxlength="50" required />
-                        </div>
-                        <div>
-                            <p>Telefono:</p>
-                            <input id="telefonoU" className='inputFormOpciones' type="number" placeholder="31567990000" title="Escriba su telefono / celular" maxlength="50" />
-                        </div>
-                        <div>
-                            <p>Direccion:</p>
-                            <input id="direccionU" className='inputFormOpciones' type="text" placeholder="Av 3 B No. 8-24" title="Escriba su direccion" maxlength="50" />
+                            <input id="correoU" className='inputFormOpciones' type="email" placeholder="Correo@correo.com" title="Escriba su correo" maxLength={50} required />
                         </div>
                         <div>
                             <p>Tarjeta:</p>
-                            <input id="tarjetaU" className='inputFormOpciones' type="number" placeholder="34598700" title="Escriba su tarjeta" maxlength="50" />
+                            <input id="tarjetaU" className='inputFormOpciones' type="number" placeholder="34598700" title="Escriba su tarjeta" maxLength={20} />
                         </div>
                         <div>
                             <p>Cuenta:</p>
-                            <input id="cuentaU" className='inputFormOpciones' type="text" placeholder="Basica" title="Su tipo de cuenta es" maxlength="50" disabled />
+                            <input id="cuentaU" className='inputFormOpciones' type="text" placeholder="Basica" title="Su tipo de cuenta es" maxLength={20} disabled />
                         </div>
                         <div>
                             <input id="guardarDatos" type="submit" value="Guardar" class="buttonMain" />

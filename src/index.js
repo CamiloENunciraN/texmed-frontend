@@ -7,11 +7,12 @@ import DashBoard from './Pagina/DashBoard';
 import Opcion from './Pagina/Opcion';
 import ClientList from './Pagina/ClientList';
 import ClientSearch from './Pagina/ClientSearch';
+import ShowMedida from './Pagina/ShowMedida';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ClientSearch></ClientSearch>
+    <DashBoard></DashBoard>
   </React.StrictMode>
 );
 
