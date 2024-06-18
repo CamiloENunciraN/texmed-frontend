@@ -5,6 +5,7 @@ import Modal_about from './../Componente/Modal/Modal_about.js';
 import Div_bar from '../Componente/Div_bar.js';
 import ClientData from '../Componente/ClientData.js';
 import MedidaData from '../Componente/MedidaData.js';
+import MedidaDetalle from '../Componente/MedidaDetalle.js';
 
 function ShowMedida() {
     return (
@@ -16,7 +17,7 @@ function ShowMedida() {
             <Div_bar nombre = "Datos de la medida:"></Div_bar>
             <MedidaData></MedidaData>
             <Div_bar nombre = "Detalles:"></Div_bar>
-
+            <MedidaDetalle></MedidaDetalle>
             <Modal_about></Modal_about>
         </div>
     );

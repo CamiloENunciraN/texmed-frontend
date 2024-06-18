@@ -12,7 +12,7 @@ import ShowMedida from './Pagina/ShowMedida';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <DashBoard></DashBoard>
+    <ShowMedida></ShowMedida>
   </React.StrictMode>
 );
 

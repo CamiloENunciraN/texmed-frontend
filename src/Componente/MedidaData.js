@@ -29,6 +29,10 @@ function MedidaData() {
                     <input className='oculto' />
                 </div>
                 <div>
+                    <p></p>
+                    <input className='oculto' />
+                </div>
+                <div>
                     <p>Cuello:</p>
                     <input id='fcuello' type='number' maxLength={5} className='inputFormOpciones' />
                 </div>

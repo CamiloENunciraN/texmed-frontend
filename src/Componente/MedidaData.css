@@ -10,28 +10,28 @@
 }
 .contenDataM{
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 25% 25% 25% 25%;
     grid-gap: 10px;
     margin: 20px;
-    width: 100%;
+    width: 90%;
 }
 .contenDataM div{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: blue;
 }
 .contenDataM p{
-    width: 30%;
+    width: 40%;
     height: 30px;
     font-style: italic;
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 .inputFormOpciones{
-    width: 30%;
+    width: 40%;
     height: 30px;
     border: none;
     font-size: 15px;

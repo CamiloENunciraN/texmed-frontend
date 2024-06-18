@@ -15,7 +15,7 @@ function Modal_cambioPass() {
                     <img className="imgIcon" src={mail} title="Escriba su correo" alt=''/>
                 </div>
                 <p>¿Desea que enviemos un mensaje a su correo con los pasos para recuperar su contraseña?</p>
-                <input id="formRePassBoton" type="button" value="Enviar" className="buttonMain formBoton" />
+                <input id="formRePassBoton" type="button" value="Enviar" className="buttonMain formBoton" onClick={cambioDePass}/>
             </form>
         </dialog>
     );
@@ -31,4 +31,7 @@ const cerrar = () => {
     modal.close();
 };
 
+const cambioDePass = ()=>{
+    
+}
 export default Modal_cambioPass;

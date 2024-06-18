@@ -1,0 +1,38 @@
+.contenDetalle{
+    width: 90%;
+    height: auto;
+    background-color: #DEDDDAFF;
+    opacity: 0.95;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1%;
+    flex-direction: column;
+}
+.contenDataD{
+    margin: 20px;
+    width: 90%;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.contenDataD div{
+    width: 90%;
+    margin-bottom: 20px;
+}
+.contenDataD textarea{
+    text-align: left;
+}
+.inputFormAnotaciones{
+    width: 100%;
+    height: 50px;
+    border: none;
+    font-size: 15px;
+    font-style: italic;
+    margin-left: auto;
+    margin-right: 50px;
+    text-align: center;
+}
+
