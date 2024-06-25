@@ -1,6 +1,6 @@
 import React from 'react';
 import './MedidaDetalle.css';
-import Button_one from './Button_one';
+import ButtonOne from './ButtonOne';
 
 function MedidaDetalle() {
     return (
@@ -96,7 +96,7 @@ function MedidaDetalle() {
                     <p>Anotaciones:</p>
                     <textarea id='fanotaciones' type='text' maxLength={500} className='inputFormAnotaciones'></textarea>
                 </div>
-                <Button_one nombre="Guardar" onClick={guardarMedida}></Button_one>
+                <ButtonOne nombre="Guardar" onClick={guardarMedida}></ButtonOne>
             </div>
         </section>
     );

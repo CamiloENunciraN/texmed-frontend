@@ -1,10 +1,10 @@
 import React from 'react';
-import './Div_bar.css';
+import './DivBar.css';
 
-function Div_bar({nombre}) {
+function DivBar({nombre}) {
   return (
     <div class="divBar">{nombre}</div>      
   );
 }
 
-export default Div_bar;
+export default DivBar;

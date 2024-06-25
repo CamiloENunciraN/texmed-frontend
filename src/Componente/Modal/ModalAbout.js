@@ -1,8 +1,8 @@
 import React from 'react';
-import './Modal_about.css';
+import './ModalAbout.css';
 import './Modal.css';
 
-function Modal_about() {
+function ModalAbout() {
   return (
     <dialog id="modalAbout">
       <input type="button" className="formCerrar" value="X" id="formAboutCerrar" onClick={cerrar} />
@@ -40,4 +40,4 @@ const cerrar = () => {
   modal.close();
 };
 
-export default Modal_about;
+export default ModalAbout;

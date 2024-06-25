@@ -1,5 +1,5 @@
 
-.Button_one {
+.ButtonOne {
     background-color: darkorange;
     color: white;
     padding: 10px 20px;
@@ -12,6 +12,6 @@
     height: 40px;
 }
 
-.Button_one:hover {
+.ButtonOne:hover {
     background-color: rgb(255, 98, 0);
 }

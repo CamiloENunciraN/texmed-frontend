@@ -1,9 +1,9 @@
 
 import './DashBoard.css';
 import Bar2 from './../Componente/Bar2.js'
-import Barra_opcion from './../Componente/Barra_opcion.js'
-import Div_bar from './../Componente/Div_bar.js'
-import Modal_about from './../Componente/Modal/Modal_about.js';
+import BarraOpcion from '../Componente/BarraOpcion.js'
+import DivBar from '../Componente/DivBar.js'
+import ModalAbout from '../Componente/Modal/ModalAbout.js';
 import { useVisualizadas, useRecientes} from './../Medida/Medida.js';
 
 function DashBoard() {
@@ -14,12 +14,12 @@ function DashBoard() {
   return (
     <div className='fondo'>
       <Bar2></Bar2>
-      <Barra_opcion></Barra_opcion>
-      <Div_bar nombre = "Recientemente Creadas:"></Div_bar>
+      <BarraOpcion></BarraOpcion>
+      <DivBar nombre = "Recientemente Creadas:"></DivBar>
       {medidaR}
-      <Div_bar nombre = "Recientemente Visualizadas:"></Div_bar>
+      <DivBar nombre = "Recientemente Visualizadas:"></DivBar>
       {medidaV}
-      <Modal_about></Modal_about>
+      <ModalAbout></ModalAbout>
     </div>
   );
 }

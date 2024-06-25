@@ -1,5 +1,5 @@
 import React from 'react';
-import './Bar.css';
+import './Bar.css'
 import logo from './../Img/iconLogo.png'
 
 function Bar() {
@@ -7,8 +7,8 @@ function Bar() {
     <div id="bar">
         <img id="logo" src={logo} alt="" />
         <h1 id="title" className="link" >TEXMED</h1>
-        <a id="iniciarSesion" className="link" onClick={modal_login} >Iniciar sesión</a>
         <a id="acercaDe" className="link" onClick={modal_about} >Acerca de</a>
+        <a id="iniciarSesion" className="link" onClick={modal_login} >Iniciar sesión</a>
     </div>
   );
 }

@@ -1,11 +1,12 @@
 import React from 'react';
-import './Modal_registrar.css';
+import './ModalRegistrar.css';
 import './Modal.css';
 import user from  "./../../Img/userIcon.png";
 import pass from "./../../Img/passwordIcon.png";
+import {registrarUsuario} from "./../../Usuario/Usuario"
 
+function ModalRegistrar() {
 
-function Modal_registrar() {
     return (   
     <dialog id="modalReg">
         <input type="button" className="formCerrar" value="X" id="formRegCerrar" onClick={cerrar}/>
@@ -24,14 +25,36 @@ function Modal_registrar() {
                 <input id="formRegPassCon" type="password" placeholder="Contraseña" title="Escriba su contraseña nuevamente" maxlength="20" required />
                 <img className="imgIcon"  src={pass} title="Escriba su contraseña" alt=''/>
             </div>
-            <input id="formRegBoton" type="button" value="Registrar" className="buttonMain formBoton" onClick={registrar}/>
+            <input onClick={registrar} id="formRegBoton" type="button" value="Registrar" className="buttonMain formBoton" />
         </form>
     </dialog>
     );
 }
 
-const registrar = () => {
 
+const registrar = () => {
+    const correo=document.getElementById('formRegMail').value;
+    const clave=document.getElementById('formRegPass').value;
+    const claveConf=document.getElementById('formRegPassCon').value;
+    if(correo===""||clave===""||claveConf===""){
+      const formNot = document.getElementById('msgReg');
+      formNot.innerHTML="Faltan datos";
+      formNot.style.backgroundColor = '#F66151FF';
+      formNot.style.color = 'black';
+      return ;
+    }
+    if (clave!==claveConf){
+        const formNot = document.getElementById('msgReg');
+        formNot.innerHTML="Las contraseñas no coinciden";
+        formNot.style.backgroundColor = '#F66151FF';
+        formNot.style.color = 'black';
+        return ;
+    }
+    const data = {"correo": correo,
+                  "clave": clave}
+    const respuesta = registrarUsuario(data);
+    alert(respuesta);
+    cerrar();
 };
 
 const cerrar = () => {
@@ -48,4 +71,4 @@ const cerrar = () => {
     modal.close();
 };
 
-export default Modal_registrar;
+export default ModalRegistrar;

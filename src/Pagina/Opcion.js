@@ -1,19 +1,19 @@
 
 import './Opcion.css';
 import Bar2 from './../Componente/Bar2.js'
-import Barra_opcion from './../Componente/Barra_opcion.js'
-import Modal_about from './../Componente/Modal/Modal_about.js';
+import BarraOpcion from '../Componente/BarraOpcion.js'
+import ModalAbout from '../Componente/Modal/ModalAbout.js';
 import ContentData from '../Componente/ContentData.js';
-import Div_bar from '../Componente/Div_bar.js';
+import DivBar from '../Componente/DivBar.js';
 
 function Opcion() {
     return (
         <div className='fondo'>
             <Bar2></Bar2>
-            <Barra_opcion></Barra_opcion>
-            <Div_bar nombre = "Opciones:"></Div_bar>
+            <BarraOpcion></BarraOpcion>
+            <DivBar nombre = "Opciones:"></DivBar>
             <ContentData></ContentData>
-            <Modal_about></Modal_about>
+            <ModalAbout></ModalAbout>
         </div>
     );
 }

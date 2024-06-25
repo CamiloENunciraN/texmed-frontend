@@ -16,39 +16,30 @@ const useUsuario = (id) => {
     );
 }
 
-const useRegistrarU = (postData) => {
-    const res = null;
-    const registrarUsuario = async () => {
-        axios.post('https://api.example.com/resources/api/usuario/registrarse', postData)
-        .then(response => {
-          res = response;
-          console.log(response);
-        })
-        .catch(error => {
-          console.error('Error posting data: ', error);
-        });
-    };
-    return (
-        <h1>res</h1>
-    );
-}
 
-const useIniciarS = (postData) => {
-    const res = null;
-    const iniciairSesion = async () => {
-        axios.post('https://api.example.com/resources/api/usuario/iniciarsesion', postData)
+    const registrarUsuario = async (postData) => {
+        axios.post('http://localhost:8080/texmed-backend/resources/api/usuario/registrarse', postData)
         .then(response => {
-          res = response;
           console.log(response);
+          return response;
         })
         .catch(error => {
           console.error('Error posting data: ', error);
         });
     };
-    return (
-        <h1>res</h1>
-    );
-}
+
+
+    const iniciairSesion = async (postData) => {
+        axios.post('http://localhost:8080/texmed-backend/resources/api/usuario/iniciarsesion', postData)
+        .then(response => {
+          console.log(response);
+          return response;
+        })
+        .catch(error => {
+          console.error('Error posting data: ', error);
+        });
+    };
+
 
 const useActualizarU = (putData) => {
     const res = null;
@@ -101,4 +92,4 @@ const useDesactivarU = (putData) => {
     );
 }
 
-export { useUsuario, useRegistrarU, useIniciarS, useActualizarU, useCambiarCU, useDesactivarU};
+export { useUsuario, registrarUsuario, iniciairSesion, useActualizarU, useCambiarCU, useDesactivarU};

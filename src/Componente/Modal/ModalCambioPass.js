@@ -1,9 +1,9 @@
 import React from 'react';
-import './Modal_cambioPass.css';
+import './ModalCambioPass.css';
 import './Modal.css';
 import mail from "./../../Img/mailIcon.png"
 
-function Modal_cambioPass() {
+function ModalCambioPass() {
     return (
         <dialog id="modalRePass">
             <input type="button" className="formCerrar" value="X" id="formRePassCerrar" onClick={cerrar}/>
@@ -34,4 +34,4 @@ const cerrar = () => {
 const cambioDePass = ()=>{
     
 }
-export default Modal_cambioPass;
+export default ModalCambioPass;
