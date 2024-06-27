@@ -2,20 +2,14 @@ import React from 'react';
 import './ContentSearch.css';
 import FilaSearch from './FilaSearch';
 
-function ContentSearch() {
+function ContentSearch(data) {
 
-    const test = [{ nombre: "Camilo", prenda: 555, fecha: "xxxxxxxxxx" },
-    { nombre: "Laura", prenda: 666, fecha: "xxxxxxxxxx"},
-    { nombre: "Pedro", prenda: 777, fecha: "xxxxxxxxxx" },
-    { nombre: "Lucia", prenda: 558885, fecha: "xxxxxxxxxx"},
-    { nombre: "Pablo", prenda: 559995, fecha: "xxxxxxxxxx" }];
-
-    const titulo = { nombre: "Nombre", prenda: "Prenda", fecha: "Fecha"};
+    const titulo = { anotaciones: "Nombre", tipo_prenda: "Prenda", fecha_creacion: "Fecha"};
     return (
-        <section className="contenData">
+        <section className="contenDataS">
             <div id="contenList">
                 <FilaSearch cliente={titulo}/>
-                {test.map((cliente, index) => (
+                {data.data.map((cliente, index) => (
                     <FilaSearch key={index} cliente={cliente}/>
                 ))}
             </div>

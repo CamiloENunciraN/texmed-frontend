@@ -14,8 +14,7 @@ img = <img src="" alt='' />
         <div className={tipo}>
             <div className="contenList_icon">{img}</div>
             <div className="contenList_nombre">{cliente.cliente.nombre}</div>
-            <div className="contenList_telefono">{cliente.cliente.telefono}</div>
-            <div className="contenList_correo">{cliente.cliente.correo}</div>
+            <div className="contenList_telefono">{cliente.cliente.celular}</div>
             <div className="contenList_direccion">{cliente.cliente.direccion}</div>
         </div>
     );

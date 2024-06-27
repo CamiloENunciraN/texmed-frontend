@@ -1,19 +1,22 @@
 import axios from "axios";
-import { useState } from "react";
-import Medida_dash from "./../Componente/Medida_dash"
+import { useState, useEffect } from "react";
+import MedidaDash from "./../Componente/MedidaDash";
 
 const useVisualizadas = (id) => {
     const [medidaV, setVisualizados] = useState([]);
     const getVisualizados = async () => {
         try {
-            const result = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
+            const result = await axios.get(`http://localhost:8080/texmed-backend/resources/api/medida/listado/visualizada/${id}`);
             setVisualizados(result.data);
         } catch (error) {
             console.error('Error fetching data: ', error);
         }
     };
+    useEffect(()=>{
+      getVisualizados(id);
+    },[]);
     return (
-        <Medida_dash data={medidaV}></Medida_dash>
+        <MedidaDash data={medidaV}></MedidaDash>
     );
 }
 
@@ -21,14 +24,17 @@ const useRecientes = (id) => {
     const [medidaR, setRecientes] = useState([]);
     const getRecientes = async () => {
         try {
-            const result = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
+            const result = await axios.get(`http://localhost:8080/texmed-backend/resources/api/medida/listado/recientes/${id}`);
             setRecientes(result.data);
         } catch (error) {
             console.error('Error fetching data: ', error);
         }
     };
+    useEffect(()=>{
+        getRecientes(id);
+    },[]);
     return (
-        <Medida_dash data={medidaR}></Medida_dash>
+        <MedidaDash data={medidaR}></MedidaDash>
     );
 }
 

@@ -3,13 +3,13 @@ import './ModalLogin.css';
 import './Modal.css';
 import pass from "./../../Img/passwordIcon.png";
 import user from "./../../Img/userIcon.png";
-import {iniciairSesion} from "./../../Usuario/Usuario";
+import {iniciarSesion} from "./../../Usuario/Usuario";
 import { useNavigate } from 'react-router-dom';
 
 function ModalLogin() {
 const navigate = useNavigate();
 
-const iniciarSesion = () => {
+const iniciar = () => {
     const correo = document.getElementById('formLoginMail').value;
     const clave = document.getElementById('formLoginPass').value;
     const formNot = document.getElementById('msgLogin');
@@ -19,22 +19,10 @@ const iniciarSesion = () => {
         formNot.style.color = 'black';
         return;
     }
-    const data = {
-        "correo": correo,
-        "clave": clave
-    }
-    const respuesta = iniciairSesion(data);
-    /*
-    if(respuesta.status===){
-        formNot.innerHTML = "Datos no validos";
-        formNot.style.backgroundColor = '#F66151FF';
-        formNot.style.color = 'black';
-        return;
-    }
-    cerrar();
-    guardar datos en storage
-    navigate ("/dashboard")
-    */
+    const datos = {"correo": correo,
+                  "clave": clave};
+
+    iniciarSesion(datos, formNot, navigate);
 };
 
     return (
@@ -51,7 +39,7 @@ const iniciarSesion = () => {
                     <input id="formLoginPass" type="password" placeholder="Contraseña" title="Escriba su contraseña" maxLength={20} required />
                     <img className="imgIcon" src={pass} title="Escriba su contraseña" alt='' />
                 </div>
-                <input id="formLoginBoton" type="button" value="Ingresar" className="buttonMain formBoton" onClick={iniciarSesion} />
+                <input id="formLoginBoton" type="button" value="Ingresar" className="buttonMain formBoton" onClick={iniciar} />
                 <div id="modalLoginOpciones">
                     <a className="link" id="registrarseModal" onClick={modal_registrar} >¿No estás registrado?</a>
                     <a className="link" id="cambiarContraModal" onClick={modal_cambioPass}>¿Olvidaste la contraseña?</a>
@@ -60,7 +48,6 @@ const iniciarSesion = () => {
         </dialog>
     );
 }
-
 
 const cerrar = () => {
     const modal = document.getElementById("modalLogin");

@@ -1,11 +1,12 @@
-.contenData{
+.contenDataU{
     width: 90%;
-    height: 70%;
+    height: 70vh;
     background-color: #DEDDDAFF;
     opacity: 0.95;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 2vh;
 }
     #contenConfi_left{
         width: 33%;
@@ -33,15 +34,16 @@
             justify-content: flex-start;
             align-items: center;
         }
-        .inputFormOpciones{
+        .inputFormOpcionesU{
             width: 70%;
             height: 30px;
             border: none;
             font-size: 15px;
             font-style: italic;
             margin-left: auto;
+            margin-right: 0px;
         } 
-        .inputFormOpciones:focus{
+        .inputFormOpcionesU:focus{
             outline: none; 
         } 
         #guardarDatos{

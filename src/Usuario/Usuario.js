@@ -17,11 +17,18 @@ const useUsuario = (id) => {
 }
 
 
-    const registrarUsuario = async (postData) => {
+    const registrarUsuario = async (postData , formNot) => {
         axios.post('http://localhost:8080/texmed-backend/resources/api/usuario/registrarse', postData)
         .then(response => {
-          console.log(response);
-          return response;
+            if(response.data==="Usuario ya registrado"){
+                formNot.innerHTML = response.data;
+                formNot.style.backgroundColor = '#F66151FF';
+                formNot.style.color = 'black';
+                return;
+            }
+            formNot.innerHTML = "Usuario registrado correctamente!, Ya puede iniciar sesion";
+            formNot.style.backgroundColor = '#A5F386';
+            formNot.style.color = 'black';
         })
         .catch(error => {
           console.error('Error posting data: ', error);
@@ -29,11 +36,19 @@ const useUsuario = (id) => {
     };
 
 
-    const iniciairSesion = async (postData) => {
+    const iniciarSesion = async (postData, formNot, navigate) => {
         axios.post('http://localhost:8080/texmed-backend/resources/api/usuario/iniciarsesion', postData)
         .then(response => {
-          console.log(response);
-          return response;
+            if(response.data===""){
+                formNot.innerHTML = "Datos no validos";
+                formNot.style.backgroundColor = '#F66151FF';
+                formNot.style.color = 'black';
+                return;
+            }
+                sessionStorage.setItem('idUser', response.data.id);
+                sessionStorage.setItem('estadoC', response.data.estado);
+                sessionStorage.setItem('tipoC', response.data.suscripcion.tipo);
+                navigate ("/dashboard");
         })
         .catch(error => {
           console.error('Error posting data: ', error);
@@ -92,4 +107,4 @@ const useDesactivarU = (putData) => {
     );
 }
 
-export { useUsuario, registrarUsuario, iniciairSesion, useActualizarU, useCambiarCU, useDesactivarU};
+export { useUsuario, registrarUsuario, iniciarSesion, useActualizarU, useCambiarCU, useDesactivarU};

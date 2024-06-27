@@ -1,5 +1,4 @@
 
-import './Opcion.css';
 import Bar2 from './../Componente/Bar2.js'
 import BarraOpcion from '../Componente/BarraOpcion.js'
 import ModalAbout from '../Componente/Modal/ModalAbout.js';

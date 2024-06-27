@@ -6,34 +6,23 @@ function Bar2() {
   const navegate = useNavigate();
   return (
     <div id="bar">
-            <img id="logo" src={logo}/>
-            <h1 id="title" class="link" onClick={()=>(navegate("/dashboard"))}>TEXMED</h1>
-            <p id="acercaDe" class="link" onClick={modal_about}>Acerca de</p>
-            <p id="configuracion" class="link" onClick={()=>(navegate("/opcion"))}>Opciones</p>
-            <p id="cerrarSesion" class="link" onClick={()=>{
+            <img id="logo" src={logo} alt=''/>
+            <h1 id="title" className="link" onClick={()=>(navegate("/dashboard"))}>TEXMED</h1>
+            <p id="acercaDe" className="link" onClick={modal_about}>Acerca de</p>
+            <p id="configuracion" className="link" onClick={()=>(navegate("/opcion"))}>Opciones</p>
+            <p id="cerrarSesion" className="link" onClick={()=>{
               sessionStorage.removeItem('idUser');
               sessionStorage.removeItem('tipoC');
+              sessionStorage.removeItem('estado');
               navegate("/");
             }}>Cerrar sesión</p>
     </div>
   );
 }
 
-const dashboard = () => {
-
-};
-
-const opciones = () => {
-
-};
-
 const modal_about = () => {
   const modal= document.getElementById("modalAbout");
   modal.showModal();
-};
-
-const cerrarsesion = () => {
-
 };
 
 export default Bar2;

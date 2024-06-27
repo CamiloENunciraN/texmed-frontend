@@ -3,7 +3,7 @@ import './DivBar.css';
 
 function DivBar({nombre}) {
   return (
-    <div class="divBar">{nombre}</div>      
+    <div className="divBar">{nombre}</div>      
   );
 }
 

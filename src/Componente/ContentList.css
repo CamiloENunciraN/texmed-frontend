@@ -1,4 +1,5 @@
-.contenData{
+
+.contenDataL{
     width: 90%;
     height: auto;
     background-color: #DEDDDAFF;
@@ -66,16 +67,7 @@
                 align-items: center;
             }
             .contenList_telefono{
-                width: 22%;
-                height: 100%;
-                margin: 1px solid #DEDDDAFF;
-                margin-right: transparent; 
-                display: flex;
-                justify-content: center;
-                align-items: center; 
-            }
-            .contenList_correo{
-                width: 22%;
+                width: 33%;
                 height: 100%;
                 margin: 1px solid #DEDDDAFF;
                 margin-right: transparent; 
@@ -84,7 +76,7 @@
                 align-items: center; 
             }
             .contenList_direccion{
-                width: 22%;
+                width: 33%;
                 height: 100%;
                 margin: 1px solid #DEDDDAFF;
                 display: flex;

@@ -1,13 +1,15 @@
 import React from 'react';
-import './Medida_icono.css';
+import './MedidaIcono.css';
 import Camisa from "../Img/Prendas/iconCamisa.png"
 import Pantalon from "../Img/Prendas/iconPantalon.png"
 import Short from "../Img/Prendas/iconPantalon.png"
 import Vestido from "../Img/Prendas/iconVestido.png"
 import Falda from "../Img/Prendas/iconFalda.png"
+import { useNavigate } from 'react-router-dom';
 
-function Medida_icono(medida) {
+function MedidaIcono(medida) {
     var tipo=null;
+    const navigate = useNavigate();
     if(medida.medida.tipo_prenda==="Camisa"){
         tipo= <img src={Camisa} alt='' />;
       }else if(medida.medida.tipo_prenda=="Chaqueta"){
@@ -22,14 +24,19 @@ function Medida_icono(medida) {
         tipo= <img src={Falda} alt='' />;
       }
 
+const vermedida = ()=>{
+    localStorage.setItem('medida', medida.medida.id);
+    navigate('/showmedida');
+}
+
     return (
-        <div className="medidaCliente" title="Ver medida">
-            <div className="medidaClienteImg" id={`agregada_${medida.medida.id}`} >
+        <div className="medidaCliente" title="Ver medida" onClick={vermedida}>
+            <div className="medidaClienteImg" id={medida.medida.id} >
                 {tipo}
             </div>
-            <p className="medidaClienteNombre" >{medida.medida.nombre}</p>
+            <p className="medidaClienteNombre" >{medida.medida.cliente.nombre}</p>
         </div>
     )
 }
 
-export default Medida_icono;
+export default MedidaIcono;

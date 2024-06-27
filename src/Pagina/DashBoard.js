@@ -7,10 +7,10 @@ import ModalAbout from '../Componente/Modal/ModalAbout.js';
 import { useVisualizadas, useRecientes} from './../Medida/Medida.js';
 
 function DashBoard() {
-  sessionStorage.setItem('idUser', 1);
   const id = sessionStorage.getItem('idUser');
-  const medidaV = useVisualizadas(id);
   const medidaR = useRecientes(id);
+  const medidaV = useVisualizadas(id);
+
   return (
     <div className='fondo'>
       <Bar2></Bar2>
