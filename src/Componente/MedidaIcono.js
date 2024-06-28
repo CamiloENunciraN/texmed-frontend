@@ -25,7 +25,7 @@ function MedidaIcono(medida) {
       }
 
 const vermedida = ()=>{
-    localStorage.setItem('medida', medida.medida.id);
+    sessionStorage.setItem('medida', medida.medida.id);
     navigate('/showmedida');
 }
 

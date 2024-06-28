@@ -1,6 +1,13 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import MedidaDash from "./../Componente/MedidaDash";
+import DivBar from '../Componente/DivBar.js';
+import ClientData from '../Componente/ClientData.js';
+import MedidaData from '../Componente/MedidaData.js';
+import MedidaDetalle from '../Componente/MedidaDetalle.js';
+import Bar2 from './../Componente/Bar2.js'
+import BarraOpcion from '../Componente/BarraOpcion.js'
+import ModalAbout from '../Componente/Modal/ModalAbout.js';
 
 const useVisualizadas = (id) => {
     const [medidaV, setVisualizados] = useState([]);
@@ -42,66 +49,62 @@ const useMedida = (id) => {
     const [medida, setMedida] = useState([]);
     const getMedida = async () => {
         try {
-            const result = await axios.get(`https://pokeapi.co/resources/api/medida/ver/${id}`);
+            const result = await axios.get(`http://localhost:8080/texmed-backend/resources/api/medida/ver/${id}`);
             setMedida(result.data);
         } catch (error) {
             console.error('Error fetching data: ', error);
         }
     };
+    useEffect(()=>{
+        getMedida();
+    },[]);
+
     return (
-        <h1></h1>
+        <div className='fondo'>
+            <Bar2></Bar2>
+            <BarraOpcion></BarraOpcion>
+            <DivBar nombre = "Datos del cliente:"></DivBar>
+            <ClientData data = {medida} metodo ="mostrar"></ClientData>
+            <DivBar nombre = "Datos de la medida:"></DivBar>
+            <MedidaData data = {medida} metodo ="mostrar"></MedidaData>
+            <DivBar nombre = "Detalles:"></DivBar>
+            <MedidaDetalle data = {medida} metodo ="mostrar"></MedidaDetalle>
+            <ModalAbout></ModalAbout>
+        </div>
     );
 }
 
-const useRegistrarM = (postData) => {
-    const res = null;
-    const registrarMedida = async () => {
-        axios.post('https://api.example.com/posts', postData)
+    const registrarMedida = async (postData, navigate) => {
+        axios.post('http://localhost:8080/texmed-backend/resources/api/medida/registrar', postData)
         .then(response => {
-          res = response;
+          alert(response.data);
+          navigate('/dashboard');
+        })
+        .catch(error => {
+          console.error('Error posting data: ', error);
+        });
+    };
+
+    const modificarMedida = async (putData, navigate) => {
+        axios.put('http://localhost:8080/texmed-backend/resources/api/medida/actualizar', putData)
+        .then(response => {
+          alert(response.data);
+          navigate('/dashboard');
+        })
+        .catch(error => {
+          console.error('Error posting data: ', error);
+        });
+    };
+
+
+    const modificarVisualMedida = async (putData) => {
+        axios.put('http://localhost:8080/texmed-backend/resources/api/medida/visualizada', putData)
+        .then(response => {
           console.log(response);
         })
         .catch(error => {
           console.error('Error posting data: ', error);
         });
     };
-    return (
-        <h1>res</h1>
-    );
-}
 
-const useModificarM = (putData) => {
-    const res = null;
-    const modificarMedida = async () => {
-        axios.put('https://api.example.com/posts', putData)
-        .then(response => {
-          res = response;
-          console.log(response);
-        })
-        .catch(error => {
-          console.error('Error posting data: ', error);
-        });
-    };
-    return (
-        <h1>res</h1>
-    );
-}
-
-const useModificarVisual = (putData) => {
-    const res = null;
-    const modificarVisualMedida = async () => {
-        axios.put('https://api.example.com/posts', putData)
-        .then(response => {
-          res = response;
-          console.log(response);
-        })
-        .catch(error => {
-          console.error('Error posting data: ', error);
-        });
-    };
-    return (
-        <h1>res</h1>
-    );
-}
-
-export { useVisualizadas, useRecientes, useMedida, useRegistrarM, useModificarM, useModificarVisual };
+export { useVisualizadas, useRecientes, useMedida, registrarMedida, modificarMedida, modificarVisualMedida };

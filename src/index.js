@@ -6,6 +6,7 @@ import ClientList from "./Pagina/ClientList";
 import ClientSearch from "./Pagina/ClientSearch";
 import Opcion from "./Pagina/Opcion";
 import ShowMedida from "./Pagina/ShowMedida";
+import NewMedida from "./Pagina/NewMedida";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/clientsearch" element={<ClientSearch/>} />
         <Route path="/opcion" element={<Opcion/>} />
         <Route path="/showmedida" element={<ShowMedida/>} />
+        <Route path="/newmedida" element={<NewMedida/>} />
       </Routes>
     </BrowserRouter>
   );

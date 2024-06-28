@@ -1,8 +1,82 @@
 import React from 'react';
 import './MedidaDetalle.css';
 import ButtonOne from './ButtonOne';
+import {registrarMedida, modificarMedida} from '../Medida/Medida'
+import { useNavigate } from 'react-router-dom';
 
-function MedidaDetalle() {
+function MedidaDetalle(data, metodo) {
+
+const navigate = useNavigate();
+//metodo para ell if
+const guardarMedida = () => {
+    //traer campos cliente
+    const nombre = document.getElementById('formNombre').value;
+    const celular = document.getElementById('formTelefono').value;
+    const direccion = document.getElementById('formDireccion').value;
+    //traer campos medida
+    const tipo_prenda = document.getElementById('fprenda').value;
+    const unidades = document.getElementById('funidades').value;
+    const cuello = document.getElementById('fcuello').value;
+    const hombro = document.getElementById('fhombro').value;
+    const pecho = document.getElementById('fpecho').value;
+    const ancho_espalda = document.getElementById('fanchoespalda').value;
+    const largo_manga = document.getElementById('flargomanga').value;
+    const puno = document.getElementById('fpuno').value;
+    const largo_total = document.getElementById('flargototal').value;
+    const cintura = document.getElementById('fcintura').value;
+    const codo = document.getElementById('fcodo').value;
+    const entrepierna = document.getElementById('fentrepierna').value;
+    const rodilla = document.getElementById('frodilla').value;
+    const cadera = document.getElementById('fcadera').value;
+    const ancho_pierna = document.getElementById('fanchopierna').value;
+    //traer campos detalles
+    const tipo_bolsillo = document.getElementById('tbolsillo').value;
+    const tipo_manga = document.getElementById('tmanga').value;
+    const tipo_cuello = document.getElementById('tcuello').value;
+    const tipo_botones = document.getElementById('tbotones').value;
+    const tipo_pretina = document.getElementById('tpretina').value;
+    const tipo_cinturon = document.getElementById('tcinturon').value;
+    const anotaciones = document.getElementById('fanotaciones').value;
+    const idUser = sessionStorage.getItem('idUser');
+
+    if(tipo_prenda==="Seleccione" || nombre === ""){
+        alert("faltan datos importantes");
+        return;
+    }
+
+    const data = {  "cliente": {"nombre":nombre,
+                                "celular":celular,
+                                "direccion": direccion,
+                                "id_usuario": idUser},
+                    "tipo_prenda": tipo_prenda,
+                    "unidades": unidades,
+                    "cuello": cuello,
+                    "hombro": hombro,
+                    "pecho": pecho,
+                    "ancho_espalda": ancho_espalda,
+                    "puno": puno,
+                    "largo_total": largo_total,
+                    "cintura": cintura,
+                    "codo": codo,
+                    "entrepierna": entrepierna,
+                    "rodilla": rodilla,
+                    "cadera": cadera, 
+                    "ancho_pierna": ancho_pierna, 
+                    "tipo_bolsillo": tipo_bolsillo, 
+                    "tipo_manga": tipo_manga, 
+                    "tipo_cuello": tipo_cuello, 
+                    "tipo_botones": tipo_botones, 
+                    "tipo_pretina": tipo_pretina, 
+                    "tipo_cinturon": tipo_cinturon, 
+                    "anotaciones": anotaciones}
+    
+    if(metodo === "mostrar"){
+        modificarMedida (data, navigate);
+    }else{
+        registrarMedida(data, navigate);
+    }
+}
+
     return (
         <section className="contenDetalle">
             <div className='contenDataM'>
@@ -101,11 +175,5 @@ function MedidaDetalle() {
         </section>
     );
 }
-
-const guardarMedida = () => {
-
-}
-
-
 
 export default MedidaDetalle;

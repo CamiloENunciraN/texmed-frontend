@@ -16,7 +16,7 @@ const buscar = (event) => {
 
   return (
     <div className="opcionBar">
-        <input onClick={()=>(navigate("/showmedida"))} type="button" value="Nueva medida" className="botonOpc" id="nuevaMedida" title="Agregar una nueva medida"/>
+        <input onClick={()=>(navigate("/newmedida"))} type="button" value="Nueva medida" className="botonOpc" id="nuevaMedida" title="Agregar una nueva medida"/>
         <input onClick={()=>(navigate("/clientlist"))} type="button" value="Listado de clientes" className="botonOpc" id="listadoClientes" title="Listado de los clientes"/>
         <div className="inputSearch">
             <input onKeyDown = {buscar} id="buscar" type="text" placeholder="Buscar cliente" title="Escriba el nombre del cliente que desea buscar" maxLength={50} required/>

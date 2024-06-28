@@ -13,7 +13,7 @@ if(cliente.cliente.anotaciones==="Nombre"){
 }
 
 const vermedida = ()=>{
-    localStorage.setItem('medida', cliente.cliente.id.id);
+    sessionStorage.setItem('medida', cliente.cliente.id.id);
     navigate('/showmedida');
 }
 

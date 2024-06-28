@@ -32,6 +32,6 @@ const cerrar = () => {
 };
 
 const cambioDePass = ()=>{
-    
+    alert("Recuperar clave no disponible... Proximamente en la Version 1.2")
 }
 export default ModalCambioPass;
