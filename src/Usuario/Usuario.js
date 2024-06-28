@@ -4,55 +4,54 @@ import user from "../Img/userIcon.png";
 
 const useUsuario = (id) => {
     const [response, setResponse] = useState({"suscripcion":{"tipo":"","fecha_inicio":""}});
+    const [suscripcion, setSuscripcion] = useState({"suscripcion":{"tipo":"","fecha_inicio":""}});
     const getUsuario = async () => {
         try {
             const result = await axios.get(`http://localhost:8080/texmed-backend/resources/api/usuario/${id}`);
             setResponse(result.data);
+            setSuscripcion(result.data);
         } catch (error) {
             console.error('Error fetching data: ', error);
         }
     };
-    useEffect(()=>{
+  useEffect(()=>{
         getUsuario();
-
     },[] );
 
-    return (
-        <section id="contenConfi" className="contenDataU">
+    return (<section id="contenConfi" className="contenDataU">
             <div id="contenConfi_left">
             <form>
                 <h1>Datos Personales</h1>
                 <div>
                     <p>Nombre:*</p>
-                    <input id="nombreU" value={response.nombre} className='inputFormOpcionesU' type="text" placeholder="Lucia" title="Escriba su nombre" maxLength={100} required />
+                    <input id="nombreU" value={response.nombre} onChange={e => setResponse(e.target.value)} className='inputFormOpcionesU' type="text" placeholder="Lucia" title="Escriba su nombre" maxLength={100} required />
                 </div>
                 <div>
                     <p>Correo:*</p>
-                    <input id="correoU" value={response.correo} className='inputFormOpcionesU' type="email" placeholder="Correo@correo.com" title="Escriba su correo" maxLength={50} required />
+                    <input id="correoU" value={response.correo} onChange={e => setResponse(e.target.value)}  className='inputFormOpcionesU' type="email" placeholder="Correo@correo.com" title="Escriba su correo" maxLength={50} required />
                 </div>
                 <div>
                     <p>Tarjeta:</p>
-                    <input id="tarjetaU" value={response.tarjeta} className='inputFormOpcionesU' type="number" placeholder="34598700" title="Escriba su tarjeta" maxLength={20} />
+                    <input id="tarjetaU" value={response.tarjeta} onChange={e => setResponse(e.target.value)}  className='inputFormOpcionesU' type="number" placeholder="34598700" title="Escriba su tarjeta" maxLength={20} />
                 </div>
                 <div>
                     <p>Cuenta:</p>
-                    <input id="cuentaU" value={response.suscripcion.tipo} className='inputFormOpcionesU' type="text" placeholder="Basica" title="Su tipo de cuenta es" maxLength={20} disabled />
+                    <input id="cuentaU"  className='inputFormOpcionesU' value={suscripcion.suscripcion.tipo} type="text" placeholder="Basica" title="Su tipo de cuenta es" maxLength={20} disabled />
                 </div>
                 <div>
-                    <input id="guardarDatos" type="submit" value="Guardar" className="buttonMain" onClick={actualizarUsuario}/>
+                    <input id="guardarDatos" type="submit" value="Guardar" className="buttonMain" onClick={actualizarUsuario} />
                 </div>
             </form>
             </div>
             <div id="contenConfi_mid">
                 <img src={user} alt='' />
-                <p id="fechaFinalizacion">Fecha creacion ={response.suscripcion.fecha_inicio}</p>
+                <p id="fechaFinalizacion">Fecha creacion ={suscripcion.suscripcion.fecha_inicio}</p>
             </div>
             <div id="contenConfi_right">
                 <input id="desactivarCuenta" onClick={()=>{alert("Desactivar cuenta no disponible... Proximamente en la Version 1.2")}} type="button" value="Desactivar Cuenta" className="buttonMain" title="Su cuenta sera desactivada y no podra hacer uso de ella" />
                 <input id="cambiarPass" onClick={()=>{alert("Cambiar clave no disponible... Proximamente en la Version 1.2")}} type="button" value="Cambiar Contraseña" className="buttonMain" />
             </div>
-        </section>
-    );
+        </section>);
 }
 
 
@@ -100,10 +99,14 @@ const useUsuario = (id) => {
         const correo =document.getElementById("correoU").value;
         const tarjeta =document.getElementById("tarjetaU").value;
         const id = sessionStorage.getItem("idUser");
-        const putData = {"nombre":nombre,"correo":correo,"tarjeta":tarjeta, "id":id}
+        if(correo ===""){
+           alert("Correo no puede estar vacio");
+           return; 
+        }
+        const putData = {"nombre":nombre,"correo":correo,"tarjeta":tarjeta, "id":id};
         axios.put('http://localhost:8080/texmed-backend/resources/api/usuario/actualizar', putData)
         .then(response => {
-          console.log(response);
+          alert("Usuario actualizado correctamente");
         })
         .catch(error => {
           console.error('Error posting data: ', error);
@@ -112,8 +115,8 @@ const useUsuario = (id) => {
 
 
 
-    const cambiarClave = async () => {
-        axios.put('https://api.example.com/resources/api/usuario/cambiarclave', putData)
+    const cambiarClave = async (putData) => {
+        axios.put('http://localhost:8080/texmed-backend/resources/api/usuario/cambiarclave', putData)
         .then(response => {
           console.log(response);
         })
@@ -122,8 +125,8 @@ const useUsuario = (id) => {
         });
     };
 
-    const desactivarUsuario = async () => {
-        axios.put('https://api.example.com/resources/api/usuario/desactivar', putData)
+    const desactivarUsuario = async (putData) => {
+        axios.put('http://localhost:8080/texmed-backend/resources/api/usuario/desactivar', putData)
         .then(response => {
           console.log(response);
         })
@@ -133,4 +136,4 @@ const useUsuario = (id) => {
     };
 
 
-export { useUsuario, registrarUsuario, iniciarSesion, actualizarUsuario, cambiarClave, desactivarUsuario};
+export { useUsuario, registrarUsuario, iniciarSesion, cambiarClave, desactivarUsuario};

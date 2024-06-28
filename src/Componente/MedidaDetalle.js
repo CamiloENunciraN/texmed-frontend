@@ -7,7 +7,20 @@ import { useNavigate } from 'react-router-dom';
 function MedidaDetalle(data, metodo) {
 
 const navigate = useNavigate();
-//metodo para ell if
+
+if(data.metodo==="mostrar" && data.data.length!==0){
+    const seleccionOpcion = ()=>{
+        document.getElementById('tbolsillo').value = data.data.tipo_bolsillo;
+        document.getElementById('tmanga').value = data.data.tipo_manga;
+        document.getElementById('tcuello').value = data.data.tipo_cuello;
+        document.getElementById('tbotones').value = data.data.tipo_botones;
+        document.getElementById('tpretina').value = data.data.tipo_pretina;
+        document.getElementById('tcinturon').value = data.data.tipo_cinturon;
+        document.getElementById('fanotaciones').value = data.data.anotaciones;
+    } 
+seleccionOpcion();
+}
+
 const guardarMedida = () => {
     //traer campos cliente
     const nombre = document.getElementById('formNombre').value;
