@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/texmed-frontend/static/css/main.56ce35fa.css",
+    "main.js": "/texmed-frontend/static/js/main.38e80770.js",
+    "static/media/fondo0.png": "/texmed-frontend/static/media/fondo0.41c3ef970781af26c5a6.png",
+    "static/media/iconImage0.webp": "/texmed-frontend/static/media/iconImage0.ebeaa223f831aff89470.webp",
+    "static/media/iconLogo.png": "/texmed-frontend/static/media/iconLogo.55b0eb2b3f74575ab6ba.png",
+    "index.html": "/texmed-frontend/index.html",
+    "main.56ce35fa.css.map": "/texmed-frontend/static/css/main.56ce35fa.css.map",
+    "main.38e80770.js.map": "/texmed-frontend/static/js/main.38e80770.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.56ce35fa.css",
+    "static/js/main.38e80770.js"
+  ]
+}
